@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import Pages from './pages/Pages';
+
+import Home from './pages/Home';
+import {BrowserRouter} from 'react-router-dom'
+import Category from './components/Category';
+import Popular from './components/Popular';
+import Search from './components/Search';
+import NavBar from './components/NavBar';
+import { createGlobalStyle } from 'styled-components'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div className='App'>
+      
+    
+    
+    <Category/>
+    <Search/>
+    <Pages/>
+    <GlobalStyle/>
+  
+  </div>
   );
 }
+const GlobalStyle = createGlobalStyle`
+  body {
+   background-color: white;
+   
+  }`
 
 export default App;
