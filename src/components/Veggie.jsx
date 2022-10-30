@@ -64,6 +64,9 @@ function Veggie() {
 const E1 = styled.p`
 display: none;
 margin-top: 80px;
+@media(max-width: 850px){
+       display: none;
+}
 
 
 svg{
@@ -91,7 +94,7 @@ h3 {
 }
 `
 const Card= styled.div`
-min-height: 20rem;
+height: 20rem;
 color: white;
 left: 4%;
 position: relative;
@@ -101,14 +104,20 @@ border-bottom: 0.5px #d0d0d0 solid;
 box-shadow: 7px 10px #d0d0d0;
 margin-bottom: 30px;
 
-
-
+@media (max-width: 850px){
+     height: 13rem;
+    
+}
 &:hover{
     border: 0.5px #ff5500 solid;
     box-shadow: 5px 10px #ff5500;
     ${E1}{
         display: block;
+
+       
     }
+    
+
 }
 
 p{
@@ -118,12 +127,19 @@ p{
     font-size: 14px;
     align-items: center;
     word-wrap: break-word;
-    
     color: black;
     text-align: center;
     font-weight: bold;
     padding: 5px;
     padding-top: 0px;
+    @media (max-width: 850px){
+        top: 110px;
+       
+   }
+   @media(max-width: 767px){
+    top:110px;
+    font-size: 12px;
+   }
     
 }
 
@@ -132,6 +148,7 @@ img {
     height:55%;
     position: absolute;
     
+   
     
    
 }

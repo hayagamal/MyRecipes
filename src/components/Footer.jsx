@@ -19,7 +19,7 @@ function Footer() {
 
             <hr className="clearfix w-100 d-md-none pb-0"/>
 
-            <div className=" col-md-2 col-sm-3 mb-md-0 mb-3">
+            <div className=" col-md-2 col-sm-4 mb-md-0 mb-3">
                 <h5 style={{color: '#cc0000'}}className="text-uppercase">Overview</h5>
                 <ul className="list-unstyled">
                     <li className='py-1'><NavLinks href="/cuisine/Italian">Recipes</NavLinks></li>

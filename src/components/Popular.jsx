@@ -96,20 +96,27 @@ h3 {
 const Card= styled.div`
 background-color: white;
 border-radius: 5px;
-min-height: 22rem;
+height: 22rem;
 color: white;
 left: 10%;
-
 margin-bottom: 100px;
 position: relative;
 width: 80%;
 top: 30px;
-
+@media (max-width: 850px){
+    height: 16rem; 
+}
+@media(max-width: 750px){
+    height: 13rem;
+}
 &:hover{
     
     box-shadow: 5px 5px #ff5500;
     ${E1}{
         display: block;
+        @media(max-width: 850px){
+            display: none;
+        }
     }
 }
 p{
@@ -123,8 +130,13 @@ p{
     font-weight: bold;
     padding: 15px;
     padding-top: 10px;
-    
-
+    @media(max-width: 850px){
+        top: 135px;
+    }
+    @media(max-width: 750px){
+        top: 110px;
+        font-size: 12px;
+    }
     
 }
 

@@ -42,8 +42,8 @@ padding: 5px;
 border-radius: 0px;
 border: 0.5px #d0d0d0 solid;
 &:hover{
-  border: 0.5px orange solid;
-  box-shadow: 10px 5px orange;
+  border: 0.5px #ff5500 solid;
+  box-shadow: 5px 5px #ff5500;
 }
 img{
   border-radius: 0px;
@@ -52,11 +52,11 @@ img{
   padding-bottom:0px;
 
 }
-h4{
-  color:black;
-  font-size: 15px;
-  margin-top: 15px;
-}
+h3{
+    color:black;
+    font-size: 15px;
+    margin-top: 15px;
+  }
 a{
   text-decoration: none;
 }
