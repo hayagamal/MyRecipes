@@ -51,6 +51,7 @@ h1{
     font-size: 40px;
     padding-bottom: 7px;
     font-family: "Haya";
+    font-weight: normal;
     @media (max-width: 1000px){
         font-size: 20px;
         padding-top: 15px;

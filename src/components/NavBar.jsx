@@ -1,9 +1,9 @@
-import React, {useEffect, useState} from 'react'
+import React from 'react'
 import '../index.css'
 import logo from '../images/logo.png'
 import 'bootstrap/dist/css/bootstrap.css'
 import {Nav, Navbar} from 'react-bootstrap'
-import {Link, UNSAFE_RouteContext} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import styled from 'styled-components'
 
 
@@ -13,7 +13,7 @@ function NavBar(props) {
   return (
     <Navbar style={{'background':'#18191ae1'}} variant="light" sticky="top" expand="md"> 
     <Navbar.Brand>
-   <Link className={'offset-1'} to={'/'}> <img  style={{width: '100px'}}src={logo}/> </Link>
+   <Link className={'offset-1'} to={'/'}> <img  style={{width: '100px'}}src={logo} alt="img"/> </Link>
     
     </Navbar.Brand>
     <Navbar.Toggle style={{'background-color': 'white', opacity: '0.2'}} className={'col-sm-1'}/>

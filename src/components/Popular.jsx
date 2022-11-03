@@ -17,6 +17,7 @@ function Popular() {
     useEffect(()=>{
         Aos.init({duration: 1500})
         getPopular();
+        
     },[]);
     const getPopular = async() =>{
         const check = localStorage.getItem("popular");
@@ -37,14 +38,14 @@ function Popular() {
         
         <Wrapper data-aos="fade-left">
             <h3>Popular Picks</h3>
-        <Splide options={{perPage:4, arrows: false, pagination: false}}>
+        <Grid>
             {popular.map(item=>{
                 return(
-                    <SplideSlide key={item.id}>
+                   
 
           
      
-        <Card whileHover={{scale: 1.1}}>
+        <Card key={item.id} whileHover={{scale: 1.1}}>
         <Link to={'/recipe/'+item.id}>        
         <div><img src={item.image} alt={item.title}/>
         <p>{item.title}</p>
@@ -59,17 +60,26 @@ function Popular() {
        
        
        
-        </SplideSlide>
+        
         )
             })}
        
-        </Splide>
+       </Grid>
         </Wrapper>
        
        )
   
   
 }
+const Grid =styled.div`
+display: grid;
+grid-template-columns: repeat(4, minmax(200px, 1fr));
+max-width: 100%;
+@media (max-width: 1000px){
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+`
+
 const E1 = styled.p`
 display: none;
 margin-top: 60px;
@@ -81,8 +91,6 @@ background: #cc0000;
 @media(max-width: 850px){
        display: none;
 }
-
-
 svg{
     line-height: 5px;
     margin: 1px;
@@ -91,30 +99,30 @@ svg{
 `
 const Wrapper = styled.div`
 bottom: 10%;
-background-color: #18191a;
+background-color: #18191ae1;
 position: relative;
 border-radius: 10px;
-
+max-width: 100%;
 h3 {
     color:white;
     padding-top :15px;
     padding-left: 15px;
     text-align: center;
-    font-size: 25px;
+    font-size: 35px;
     text-decoration: underline #ff5500;
     text-underline-offset: 7px;
-    font-family: Allan;
+    font-family: Haya;
+    font-weight: normal;
     
 }
 `
 const Card= styled(motion.div)`
 background-color: white;
-
 border-radius: 5px;
 height: 22rem;
 box-shadow: 5px 5px rgba(0,0,0,0.2);
 left: 10%;
-margin-bottom: 100px;
+margin-bottom: 60px;
 position: relative;
 width: 80%;
 top: 30px;
@@ -140,7 +148,10 @@ span{
     box-shadow: 5px 5px #ff5500;
     ${E1}{
         display: block;
-        @media(max-width: 850px){
+        @media(max-width: 1350px){
+            margin-left: 50px;
+        }
+        @media(max-width: 1200px){
             display: none;
         }
     }
@@ -160,8 +171,8 @@ p{
         top: 135px;
     }
     @media(max-width: 750px){
-        top: 110px;
-        font-size: 12px;
+        top: 105px;
+        font-size: 11px;
     }
     
 }

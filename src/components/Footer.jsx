@@ -1,9 +1,10 @@
 import React from 'react'
 import logo from '../images/logo.png'
-import {NavLink} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import styled from 'styled-components'
 import {BsTelephone, BsEnvelope} from 'react-icons/bs'
 import {HiHome} from 'react-icons/hi'
+import {GrTwitter,GrGithub,GrLinkedin,GrFacebookOption} from 'react-icons/gr'
 function Footer() {
   return (
     <div>
@@ -12,7 +13,7 @@ function Footer() {
     <div  className="container-fluid text-center text-md-left">
         <div className="row">
             <div className=" col-md-4 mt-md-1 mt-3 mb-sm-4">
-                <h5 style={{color: '#ff5500', 'font-size': '20px'}}>Ready to cook?</h5>
+                <h5 style={{color: '#ff5500', 'font-size': '30px', 'font-weight': 'normal','font-family':'Haya'}}>Ready to cook?</h5>
                 <p>Subscribe to Our Newsletter</p>
                 <Input type="text" placeholder="Enter your email address"/>
                 <Button>Subscribe</Button>          </div>
@@ -39,7 +40,13 @@ function Footer() {
             </div >
 
             <div className='col-md-4 col-sm-5' >
-                <img src={logo} style={{width: '250px', height: '110px'}} />
+              <Link to={'/'}>  <img  src={logo} style={{width: '250px', height: '110px'}} /> </Link>
+                <Grid  className='offset-1'>
+                    <GrTwitter />
+                    <GrGithub/>
+                    <GrLinkedin/>
+                    <GrFacebookOption/>
+                </Grid>
             </div>
         </div>
     </div>
@@ -52,6 +59,18 @@ function Footer() {
     </div>
   )
 }
+const Grid = styled.div`
+margin-top: 20px;
+font-size: 25px;
+
+
+*{
+    margin-right: 30px;
+    &:hover{
+        color: #cc0000;
+    }
+}
+`
 const Button = styled.button`
 background-color: #cc0000;
 border: none;

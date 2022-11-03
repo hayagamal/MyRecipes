@@ -77,10 +77,6 @@ margin-left: 50px;
 border: 2px #cc0000 solid;
 border-radius: 15px;
 background: #cc0000;
-
-
-
-
 svg{
     line-height: 5px;
     margin: 1px;
@@ -88,11 +84,9 @@ svg{
 }
 `
 const Wrapper = styled.div`
-
 background-color: #2c2c2c;
 position: relative;
 padding-top: 30px;
-
 padding-bottom: 40px;
 border-radius: 5px;
 margin-bottom: 50px;
@@ -101,11 +95,11 @@ h3 {
     color:white;
     padding-top :15px;
     text-align: center;
-    font-size: 23px;
+    font-size: 35px;
     text-decoration: #cc0000 underline;
-    text-underline-offset: 9px;
-    
-    
+    text-underline-offset: 9px; 
+    font-weight: normal;
+    font-family: Haya;
 }
 
 `
