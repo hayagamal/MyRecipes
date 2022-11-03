@@ -8,7 +8,7 @@ function Footer() {
   return (
     <div>
 
-<footer  className="bg-dark mb-0 page-footer font-small  pt-lg-5 pt-3 mt-5 text-light" >
+<footer style={{background: '#18191a'}}  className=" mb-0 page-footer font-small  pt-lg-5 pt-3 mt-5 text-light" >
     <div  className="container-fluid text-center text-md-left">
         <div className="row">
             <div className=" col-md-4 mt-md-1 mt-3 mb-sm-4">
@@ -31,9 +31,9 @@ function Footer() {
             <div className="col-md-2 col-sm-3 mb-md-0 mb-3">
             <h5 style={{color: '#ff5500'}} className="text-uppercase">Contact Us</h5>
                 <ul className=" list-unstyled">
-                    <li className=' py-1'><NavLinks href="#!"><HiHome/> Cairo, Egypt</NavLinks></li>
-                    <li className='py-1'><NavLinks href="#!"><BsEnvelope/> info@gmail.com</NavLinks></li>
-                    <li className='py-1'><NavLinks href="#!"><BsTelephone/> +1 23456789</NavLinks></li>
+                    <li className=' py-1'><p><HiHome/> Cairo, Egypt</p></li>
+                    <li className='py-1'><p><BsEnvelope/> info@gmail.com</p></li>
+                    <li className='py-1'><p><BsTelephone/> +1 23456789</p></li>
                     
                 </ul>
             </div >
@@ -67,7 +67,7 @@ border: none;
 width: 250px;
 margin-bottom: 10px;
 `
-const NavLinks = styled.a`
+const NavLinks = styled.p`
 color: white;
 font-weight: bold;
 margin: 20px 0px 20px 0px;

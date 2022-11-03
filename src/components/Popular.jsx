@@ -7,10 +7,15 @@ import '@splidejs/react-splide'
 import {Splide, SplideSlide } from '@splidejs/react-splide';
 import {Link} from 'react-router-dom'
 import {BiDish} from 'react-icons/bi'
+import {FcLike} from 'react-icons/fc'
+import {motion} from 'framer-motion'
+import Aos from 'aos';
+import "aos/dist/aos.css"
 function Popular() {
     
     const [popular, setPopular] = useState([])
     useEffect(()=>{
+        Aos.init({duration: 1500})
         getPopular();
     },[]);
     const getPopular = async() =>{
@@ -30,7 +35,7 @@ function Popular() {
   return (
    
         
-        <Wrapper>
+        <Wrapper data-aos="fade-left">
             <h3>Popular Picks</h3>
         <Splide options={{perPage:4, arrows: false, pagination: false}}>
             {popular.map(item=>{
@@ -39,11 +44,12 @@ function Popular() {
 
           
      
-        <Card>
+        <Card whileHover={{scale: 1.1}}>
         <Link to={'/recipe/'+item.id}>        
         <div><img src={item.image} alt={item.title}/>
         <p>{item.title}</p>
-        <E1 style={{color: '#cc0000'}}> <BiDish/> View Recipe</E1>
+        <E1 style={{color: 'white', 'padding': '4px 15px 4px 15px'}}> <BiDish/> View Recipe</E1>
+        <span><FcLike/> {item.aggregateLikes} Likes</span>
         </div>
         
         
@@ -66,7 +72,15 @@ function Popular() {
 }
 const E1 = styled.p`
 display: none;
-margin-top: 80px;
+margin-top: 60px;
+margin-left: 65px;
+border: 2px #cc0000 solid;
+border-radius: 15px;
+background: #cc0000;
+
+@media(max-width: 850px){
+       display: none;
+}
 
 
 svg{
@@ -77,27 +91,28 @@ svg{
 `
 const Wrapper = styled.div`
 bottom: 10%;
-background: linear-gradient(to bottom ,#d5f3fe, white);
+background-color: #18191a;
 position: relative;
-
+border-radius: 10px;
 
 h3 {
-    color: black;
+    color:white;
     padding-top :15px;
     padding-left: 15px;
-    
     text-align: center;
     font-size: 25px;
     text-decoration: underline #ff5500;
     text-underline-offset: 7px;
+    font-family: Allan;
     
 }
 `
-const Card= styled.div`
+const Card= styled(motion.div)`
 background-color: white;
+
 border-radius: 5px;
 height: 22rem;
-color: white;
+box-shadow: 5px 5px rgba(0,0,0,0.2);
 left: 10%;
 margin-bottom: 100px;
 position: relative;
@@ -108,6 +123,17 @@ top: 30px;
 }
 @media(max-width: 750px){
     height: 13rem;
+}
+span{
+    position: absolute;
+    top: 280px;
+    left: 1px;
+    font-size: 13px;
+    font-weight: bold;
+    color: black;
+    @media (max-width: 1000px){
+        display: none;
+    }
 }
 &:hover{
     

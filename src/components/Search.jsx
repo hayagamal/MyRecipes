@@ -29,10 +29,11 @@ const Formi = styled.form`
    display: grid;
    justify-content: center;
     position: relative;
+    
  input{
      
   
-    background-color: #313131;
+    background-color: #18191a;
     color: white;
     width: 40rem;
     height: 2rem;
@@ -41,7 +42,11 @@ const Formi = styled.form`
     padding: 10px;
     padding-left: 30px;
     margin-top: -7px;
+    position: relative;
     
+    @media (max-width: 500px){
+        width: 30rem;
+    }
     
  }
  svg{
@@ -51,6 +56,7 @@ const Formi = styled.form`
     margin-left: 7px;
     z-index: 1;
     color: white;
+    display: sticky;
    
     
 }

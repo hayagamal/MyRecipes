@@ -41,7 +41,7 @@ align-items: center;
 margin-right: 2rem;
 border-radius: 50%;
 text-decoration: none;
-background-color: #313131;
+background-color: #18191a;
 width: 6rem;
 height: 6rem;
 cursor: pointer;

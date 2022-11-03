@@ -3,12 +3,12 @@ import { useState, useEffect, memo } from 'react'
 import {useParams, Link} from 'react-router-dom'
 import styled from "styled-components"
 import {GlobalStyle} from './Home'
-
+import {motion} from 'framer-motion'
 function Cuisine() {
     const [cuisine, setCuisine] = useState([]);
     let params = useParams();
     const getCuisine = async (name) =>{
-        const data = await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=94bad2d73d314ebd9256da8ed133ec09&cuisine=${name}`);
+        const data = await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=d478834f6ebc49508f02ba3b193c1ee3&cuisine=${name}`);
         const recipes = await data.json();
         setCuisine(recipes.results);
     }
@@ -22,7 +22,7 @@ function Cuisine() {
     <Grid>
      {cuisine.map((dish) => {
       return(
-     <Card key={dish.id}>
+     <Card whileHover={{scale: 1.1}} key={dish.id}>
       <Link to={'/recipe/'+dish.id}>
       <img src={dish.image} alt={dish.title}/>
       <h4>{dish.title}</h4>
@@ -40,7 +40,7 @@ display: grid;
 grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 grid-gap: 20px;
 `
-const Card = styled.div`
+const Card = styled(motion.div)`
 background-color: white;
 padding: 5px;
 border-radius: 0px;
